@@ -1,0 +1,124 @@
+{
+    "name": "lyfes-cursor-rules",
+    "displayName": "Lyfe's Cursor Rules",
+    "description": "让AI编程更智能的Cursor Rules模板集合",
+    "version": "1.0.0",
+    "publisher": "lyfe2025",
+    "icon": "icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lyfe2025/lyfes-cursor-rules"
+    },
+    "bugs": {
+        "url": "https://github.com/lyfe2025/lyfes-cursor-rules/issues"
+    },
+    "homepage": "https://github.com/lyfe2025/lyfes-cursor-rules#readme",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.74.0"
+    },
+    "categories": [
+        "Snippets",
+        "Other",
+        "Programming Languages"
+    ],
+    "keywords": [
+        "cursor",
+        "rules",
+        "ai",
+        "chinese",
+        "中文",
+        "编程",
+        "助手",
+        "模板"
+    ],
+    "activationEvents": [],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "lyfes-cursor-rules.addCursorRules",
+                "title": "添加 Cursor 规则文件",
+                "category": "Lyfe"
+            },
+            {
+                "command": "lyfes-cursor-rules.listRules",
+                "title": "查看所有规则模板",
+                "category": "Lyfe"
+            },
+            {
+                "command": "lyfes-cursor-rules.addWebRules",
+                "title": "Web前端开发规则",
+                "category": "Lyfe"
+            },
+            {
+                "command": "lyfes-cursor-rules.addMobileRules",
+                "title": "移动应用开发规则",
+                "category": "Lyfe"
+            },
+            {
+                "command": "lyfes-cursor-rules.addBackendRules",
+                "title": "后端服务开发规则",
+                "category": "Lyfe"
+            },
+            {
+                "command": "lyfes-cursor-rules.addGeneralRules",
+                "title": "通用开发规则",
+                "category": "Lyfe"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "lyfes-cursor-rules.addCursorRules",
+                    "group": "navigation"
+                }
+            ],
+            "commandPalette": [
+                {
+                    "command": "lyfes-cursor-rules.addCursorRules",
+                    "when": "workbenchState != empty"
+                },
+                {
+                    "command": "lyfes-cursor-rules.addWebRules",
+                    "when": "workbenchState != empty"
+                },
+                {
+                    "command": "lyfes-cursor-rules.addMobileRules",
+                    "when": "workbenchState != empty"
+                },
+                {
+                    "command": "lyfes-cursor-rules.addBackendRules",
+                    "when": "workbenchState != empty"
+                },
+                {
+                    "command": "lyfes-cursor-rules.addGeneralRules",
+                    "when": "workbenchState != empty"
+                },
+                {
+                    "command": "lyfes-cursor-rules.listRules",
+                    "when": "workbenchState != empty"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js",
+        "package": "vsce package"
+    },
+    "devDependencies": {
+        "@types/node": "16.x",
+        "@types/vscode": "^1.74.0",
+        "@typescript-eslint/eslint-plugin": "^5.45.0",
+        "@typescript-eslint/parser": "^5.45.0",
+        "@vscode/test-electron": "^2.2.0",
+        "@vscode/vsce": "^3.5.0",
+        "eslint": "^8.28.0",
+        "typescript": "^4.9.4"
+    }
+}
